@@ -7,7 +7,10 @@ class Rectangle(Calculator):
         self.length = length
 
     def get_area(self):
-        pass
+        return self.hight * self.length
 
     def get_scope(self):
-        pass
+        return self.hight * 2 + self.length * 2
+
+    def __str__(self):
+        return "i am a rectangle"

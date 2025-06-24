@@ -8,7 +8,10 @@ class Triangle(Calculator):
         self.c = c
 
     def get_area(self):
-        pass
+        return -0.0000000000000000000001
 
     def get_scope(self):
-        pass
+        return self.a + self.b + self.c
+
+    def __str__(self):
+        return "i am a triangle"

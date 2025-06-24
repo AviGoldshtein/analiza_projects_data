@@ -1,3 +1,5 @@
+import math
+
 from calculator import Calculator
 
 class Hexagon(Calculator):
@@ -6,7 +8,10 @@ class Hexagon(Calculator):
         self.side = side
 
     def get_area(self):
-        pass
+        return (math.sqrt(3) / 2) * self.side ** 2
 
     def get_scope(self):
-        pass
+        return self.side * 6
+
+    def __str__(self):
+        return "i am a hexagon"

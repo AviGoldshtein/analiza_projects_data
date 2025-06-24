@@ -6,7 +6,10 @@ class Square(Calculator):
         self.side = side
 
     def get_area(self):
-        pass
+        return self.side ** 2
 
     def get_scope(self):
-        pass
+        return self.side * 4
+
+    def __str__(self):
+        return "i am a square"
