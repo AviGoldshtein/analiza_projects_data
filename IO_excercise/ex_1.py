@@ -74,12 +74,10 @@ import csv
 # all_cities = {}
 # with (open("sample_names.csv", mode="r", encoding="utf-8") as reading_file,
 #     open("city_summary.csv", mode="w", newline='', encoding="utf-8") as writing_file):
-#     reader = csv.reader(reading_file)
-#     content_list = list(reader)
-#     first_line = content_list[0]
 #
 #     #reading
-#     for row in content_list[1:]:
+#     reader = csv.reader(reading_file)
+#     for row in list(reader)[1:]:
 #         if not row[4] in all_cities: #city init
 #             all_cities[row[4]] = {}
 #         if not row[2] in all_cities[row[4]]: #title init
@@ -94,8 +92,8 @@ import csv
 #             writer.writerow((city, subject, count))
 
 ############# q10
-# import json
-# all_poeple = []
+import json
+# all_people = []
 # with (open("sample_names.csv", mode="r", encoding="utf-8") as reading_file,
 #       open("people.json", mode="w", encoding="utf-8") as writing_file):
 #     reader = csv.reader(reading_file)
@@ -105,15 +103,37 @@ import csv
 #                   "title": row[2],
 #                   "Occupation": row[3],
 #                   "City": row[4]}
-#         all_poeple.append(person)
+#         all_people.append(person)
 #
-#     json.dump(all_poeple, writing_file, indent=4)
+#     json.dump(all_people, writing_file, indent=4)
 
-############ q11
+########### q11
 # import json
 # cities = {}
 # with open("people.json", mode="r", encoding="utf-8") as file:
 #     content = json.load(file)
 #     for person in content:
-#         # city = person[""]
-#         print(person)
+#         if not person["City"] in cities:
+#             cities[person["City"]] = 0
+#         cities[person["City"]] += 1
+#
+# for city, amount in cities.items():
+#     one_or_more = "people" if amount > 1 else "person"
+#     print(f"the city: '{city}' has '{amount}' {one_or_more} in it.")
+
+
+
+
+
+########  ########  ########  ########  ########
+# with open("sample_names.csv", mode="r", encoding="utf-8") as file:
+#     reader = csv.DictReader(file)
+#     print(list(reader))
+
+# with open("my_headache.csv", mode="a", newline='', encoding="utf-8") as file:
+#     fieldnames = ["product_number", "amount_available", "cost"]
+#     writer = csv.DictWriter(file, fieldnames=fieldnames)
+#     # writer.writeheader()
+#     writer.writerow({"product_number": 5,
+#                      "amount_available": 28,
+#                      "cost": 58.5})
