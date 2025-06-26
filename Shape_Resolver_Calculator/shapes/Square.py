@@ -10,6 +10,9 @@ class Square(Calculator):
         """
         self.side = side
 
+    def __copy__(self):
+        return Square(self.side)
+
     def get_area(self) -> float:
         """
         Calculates the area (surface) of the Square.

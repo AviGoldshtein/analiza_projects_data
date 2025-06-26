@@ -12,6 +12,9 @@ class Rectangle(Calculator):
         self.height = height
         self.length = length
 
+    def __copy__(self):
+        return Rectangle(self.height, self.length)
+
     def get_area(self) -> float:
         """
         Calculate the area of the rectangle.

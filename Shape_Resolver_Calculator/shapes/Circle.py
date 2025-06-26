@@ -11,15 +11,18 @@ class Circle(Calculator):
         """
         self.radius = radius
 
+    def __copy__(self):
+        return Circle(self.radius)
 
-    def __add__(self, other:'Circle') -> float:
-        """
-        Adds the surface areas of two circles.
 
-        :param other: Another Circle object.
-        :return: Sum of the surface areas of both circles.
-        """
-        return self.get_area() + other.get_area()
+    # def __add__(self, other:'Circle') -> float:
+    #     """
+    #     Adds the surface areas of two circles.
+    #
+    #     :param other: Another Circle object.
+    #     :return: Sum of the surface areas of both circles.
+    #     """
+    #     return self.get_area() + other.get_area()
 
     def get_area(self) -> float:
         """

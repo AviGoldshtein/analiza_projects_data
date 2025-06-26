@@ -14,6 +14,9 @@ class Triangle(Calculator):
         self.b = b
         self.c = c
 
+    def __copy__(self):
+        return Triangle(self.a, self.b, self.c)
+
     def get_area(self) -> float:
         """
         Calculate the area of the Triangle.

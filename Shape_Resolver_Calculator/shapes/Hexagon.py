@@ -12,6 +12,9 @@ class Hexagon(Calculator):
         """
         self.side = side
 
+    def __copy__(self):
+        return Hexagon(self.side)
+
     def get_area(self) -> float:
         """
         Calculate the surface of the area.

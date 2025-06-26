@@ -23,3 +23,31 @@ if __name__ == "__main__":
         print(shape)
         print(f" area: {shape.get_area()}")
         print(f" scope: {shape.get_scope()}")
+
+    print()
+    shape1 = Hexagon(45)
+    shape2 = Hexagon(32)
+
+    print(shape1)
+    print(shape2)
+    print(shape1 < shape2)
+    print(shape1 <= shape2)
+    print(shape1 == shape2)
+    print(shape1 > shape2)
+    print(shape1 >= shape2)
+    print(bool(shape1))
+
+    print(shape1 + shape2)
+    print(shape1 - shape2)
+    print(shape1 * shape2)
+    print(shape1 / shape2)
+    print(shape1 // shape2)
+    print(shape1 % shape2)
+
+    print()
+    new_shape = shape1.__copy__()
+    print(shape1)
+    print(new_shape)
+    new_shape.side += 1
+    print(shape1)
+    print(new_shape)
